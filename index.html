@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>De Manaus ao palco do TMRJ - Stanley Kramer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        ballet: {
+                            light: '#8FC5FF',
+                            accent: '#429DFF',
+                            primary: '#357ECC',
+                            dark: '#2F70B5',
+                            muted: '#47627F',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Montserrat', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
+    <style>
+        html { scroll-behavior: smooth; }
+        body { background-color: #F8FAFC; color: #47627F; }
+        
+        @keyframes fillBar { from { width: 0%; } to { width: 35%; } }
+        .animate-progress { animation: fillBar 1.5s cubic-bezier(0.1, 0.7, 0.1, 1) forwards; }
+        @keyframes float { 0%, 100% { transform: translate(50%, -50%) translateY(0); } 50% { transform: translate(50%, -50%) translateY(-3px); } }
+        .animate-slipper { animation: float 2.5s ease-in-out infinite; }
+        .progress-stripes { background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.2) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.2) 50%, rgba(255, 255, 255, 0.2) 75%, transparent 75%, transparent); background-size: 1.2rem 1.2rem; }
+        @keyframes move-stripes { 0% { background-position: 0 0; } 100% { background-position: 1.2rem 0; } }
+        .animate-stripes { animation: move-stripes 1s linear infinite; }
+    </style>
+</head>
+<body class="antialiased min-h-screen flex flex-col font-sans selection:bg-ballet-light selection:text-ballet-dark">
+
+    <!-- Header / Menu -->
+    <header class="w-full bg-white/95 backdrop-blur-md fixed top-0 z-50 shadow-sm border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-[76px] flex justify-between items-center">
+            <a href="#" class="flex flex-col shrink-0 group">
+                <span class="text-xl md:text-[22px] font-serif text-ballet-dark font-bold leading-none mb-1">
+                    De Manaus ao palco do TMRJ
+                </span>
+                <span class="text-[9px] md:text-[10px] uppercase tracking-[0.15em] text-ballet-primary font-bold">
+                    Bolsa Theatro Municipal RJ
+                </span>
+            </a>
+            <nav class="hidden lg:flex flex-1 justify-center">
+                <ul class="flex items-center space-x-8 text-[12px] font-bold tracking-widest uppercase text-ballet-muted/90">
+                    <li><a href="#trajetoria" class="hover:text-ballet-primary transition-colors">História</a></li>
+                    <li><a href="#metas" class="hover:text-ballet-primary transition-colors">Transparência</a></li>
+                    <li><a href="#depoimentos" class="hover:text-ballet-primary transition-colors">Mural</a></li>
+                </ul>
+            </nav>
+            <div class="hidden lg:flex shrink-0">
+                <a href="#ajudar" class="bg-ballet-dark text-white px-6 py-2.5 rounded-full hover:bg-ballet-primary transition-all duration-300 shadow hover:shadow-md text-[12px] font-bold tracking-widest uppercase flex items-center justify-center gap-2">
+                    💝 Como Ajudar (Pix)
+                </a>
+            </div>
+            <button class="lg:hidden text-ballet-dark">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" /></svg>
+            </button>
+        </div>
+    </header>
+
+    <!-- Banner Principal (Hero Section) Integrado -->
+    <main class="flex-grow pt-28 pb-10">
+        <div class="max-w-[85rem] mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="relative bg-white rounded-[2rem] shadow-[0_15px_60px_-15px_rgba(47,112,181,0.15)] border border-ballet-light/30 overflow-hidden flex flex-col lg:flex-row items-stretch">
+                
+                <div class="absolute top-0 right-0 w-[600px] h-[600px] bg-gradient-to-br from-ballet-light/10 to-transparent rounded-full blur-3xl -translate-y-1/2 translate-x-1/4 pointer-events-none"></div>
+                
+                <div class="w-full lg:w-5/12 p-6 lg:p-12 flex items-center justify-center relative bg-gradient-to-br from-gray-50/50 to-white border-r border-gray-100">
+                    <div class="relative w-full max-w-[420px] aspect-[4/5] z-10 group">
+                        <div class="absolute inset-0 bg-ballet-accent rounded-[1.5rem] translate-x-4 translate-y-4 -z-10 transition-transform duration-500 group-hover:translate-x-5 group-hover:translate-y-5 opacity-90"></div>
+                        <img src="stanley1.png" alt="Stanley Kramer dançando" class="w-full h-full object-cover rounded-[1.5rem] shadow-xl border-[6px] border-white z-10 relative object-top">
+                        <div class="absolute -bottom-5 -left-5 bg-white p-4 rounded-2xl shadow-xl border border-gray-100 flex items-center gap-3 z-20 hover:-translate-y-1 transition-transform cursor-default">
+                            <div class="w-10 h-10 rounded-full bg-ballet-light/30 flex items-center justify-center text-ballet-primary">
+                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M11.645 20.91l-.007-.003-.022-.012a15.247 15.247 0 01-.383-.218 25.18 25.18 0 01-4.244-3.17C4.688 15.36 2.25 12.174 2.25 8.25 2.25 5.322 4.714 3 7.688 3A5.5 5.5 0 0112 5.052 5.5 5.5 0 0116.313 3c2.973 0 5.437 2.322 5.437 5.25 0 3.925-2.438 7.111-4.739 9.256a25.175 25.175 0 01-4.244 3.17 15.247 15.247 0 01-.383.219l-.022.012-.007.004-.003.001a.752.752 0 01-.704 0l-.003-.001z"></path></svg>
+                            </div>
+                            <div>
+                                <p class="text-[10px] font-bold text-ballet-muted uppercase tracking-wider">Apoie um</p>
+                                <p class="text-sm font-serif italic text-ballet-dark font-bold">Jovem Talento</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="w-full lg:w-7/12 p-8 lg:p-12 flex flex-col justify-center relative z-10">
+                    <h1 class="text-3xl sm:text-4xl lg:text-4xl xl:text-[2.75rem] font-serif text-ballet-dark leading-[1.2] mb-5 font-bold tracking-tight">
+                        Do Coração da <span class="text-ballet-primary relative inline-block">
+                            Amazônia
+                            <svg class="absolute w-full h-3 -bottom-1 left-0 text-ballet-light -z-10 opacity-70" viewBox="0 0 100 20" preserveAspectRatio="none"><path d="M0,15 Q50,0 100,15" stroke="currentColor" stroke-width="6" fill="none"/></svg>
+                        </span><br>
+                        ao palco do <span class="italic font-normal text-ballet-accent">Theatro Municipal do Rio de Janeiro</span>.
+                    </h1>
+                    <p class="text-base lg:text-lg font-medium leading-relaxed mb-8 text-ballet-muted max-w-xl">
+                        Ajude <strong class="font-bold text-ballet-dark border-b-2 border-ballet-light/50">Stanley Kramer</strong>, 18 anos, talento do balé nascido na Colônia Oliveira Machado (MAO), a embarcar para o Curso de Verão do TMRJ (RJ).
+                    </p>
+                    
+                    <div class="w-full bg-gradient-to-br from-gray-50 to-white rounded-2xl p-5 md:p-6 border border-gray-100 shadow-[0_4px_20px_-10px_rgba(0,0,0,0.08)] mb-8">
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="flex items-center gap-2">
+                                <span class="w-2 h-2 rounded-full bg-ballet-primary animate-pulse"></span>
+                                <span class="text-[11px] font-bold text-ballet-muted uppercase tracking-widest">Evolução do Voo (Meta)</span>
+                            </div>
+                            <span class="text-xs font-bold text-ballet-dark bg-ballet-light/20 px-3 py-1 rounded-full">35% Concluído</span>
+                        </div>
+
+                        <div class="flex items-center gap-4 mb-6">
+                            <div class="flex flex-col items-center"><span class="font-serif font-bold text-lg text-ballet-dark">MAO</span></div>
+                            <div class="flex-1 bg-gray-100 rounded-full h-3 relative shadow-inner overflow-visible">
+                                <div class="bg-gradient-to-r from-ballet-primary to-ballet-accent h-full rounded-full relative animate-progress flex items-center justify-end">
+                                    <div class="absolute inset-0 progress-stripes animate-stripes opacity-40 rounded-full"></div>
+                                    <div class="absolute right-0 top-1/2 animate-slipper w-10 h-10 bg-white rounded-full shadow-lg border-2 border-ballet-light flex items-center justify-center text-xl z-20">
+                                        🩰
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex flex-col items-center"><span class="font-serif font-bold text-lg text-ballet-primary">SDU</span></div>
+                        </div>
+
+                        <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+                            <div class="bg-white p-3 rounded-xl border border-gray-100 shadow-sm flex flex-col items-center text-center">
+                                <span class="text-[9px] uppercase tracking-wider text-ballet-muted font-bold mb-1">Arrecadado</span>
+                                <span class="text-[15px] font-bold text-ballet-dark font-serif">R$ 3.500</span>
+                            </div>
+                            <div class="bg-white p-3 rounded-xl border border-gray-100 shadow-sm flex flex-col items-center text-center">
+                                <span class="text-[9px] uppercase tracking-wider text-ballet-muted font-bold mb-1">Meta</span>
+                                <span class="text-[15px] font-bold text-ballet-primary font-serif">R$ 10.000</span>
+                            </div>
+                            <div class="bg-white p-3 rounded-xl border border-gray-100 shadow-sm flex flex-col items-center text-center">
+                                <span class="text-[9px] uppercase tracking-wider text-ballet-muted font-bold mb-1">Apoiadores</span>
+                                <span class="text-[15px] font-bold text-ballet-dark font-serif">48 <span class="text-[10px] font-sans text-ballet-muted font-normal">pessoas</span></span>
+                            </div>
+                            <div class="bg-ballet-dark p-3 rounded-xl shadow-md flex flex-col items-center text-center">
+                                <span class="text-[9px] uppercase tracking-wider text-ballet-light font-bold mb-1">Restam</span>
+                                <span class="text-[15px] font-bold text-white font-serif" id="countdown">112 dias</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="flex flex-col sm:flex-row items-center gap-4">
+                        <a href="#ajudar" class="w-full sm:w-auto bg-ballet-dark text-white text-sm font-bold uppercase tracking-widest py-4 px-10 rounded-full hover:bg-ballet-primary hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300 text-center flex justify-center items-center gap-2">
+                            💝 Como Ajudar (Pix)
+                        </a>
+                        <a href="#trajetoria" class="w-full sm:w-auto bg-transparent border-2 border-ballet-dark/20 text-ballet-dark text-sm font-bold uppercase tracking-widest py-4 px-10 rounded-full hover:border-ballet-primary hover:text-ballet-primary transition-all duration-300 text-center">
+                            A Trajetória
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Seção: A Trajetória (Estilo Emocional / Editorial) -->
+    <section id="trajetoria" class="py-24 bg-white relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            
+            <!-- Header da Seção -->
+            <div class="text-center mb-20">
+                <span class="inline-flex items-center gap-2 text-[10px] font-bold text-ballet-primary uppercase tracking-[0.2em] mb-4">
+                    <span class="w-8 h-[1px] bg-ballet-primary"></span>
+                    O Motivo
+                    <span class="w-8 h-[1px] bg-ballet-primary"></span>
+                </span>
+                <h2 class="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-ballet-dark mb-6">Por que apoiar o Stanley?</h2>
+                <p class="text-lg md:text-xl text-ballet-muted max-w-3xl mx-auto font-medium leading-relaxed">
+                    Conheça a história de dedicação de um jovem que transformou a dança em sua vida, e veja por que ele merece estar no palco mais nobre do Brasil.
+                </p>
+            </div>
+
+            <div class="space-y-24 md:space-y-32">
+                
+                <!-- Bloco 1: O Início -->
+                <div class="flex flex-col lg:flex-row items-center gap-10 lg:gap-20">
+                    <div class="w-full lg:w-1/2 relative group">
+                        <div class="absolute inset-0 bg-ballet-light/30 rounded-[2rem] transform -rotate-3 group-hover:rotate-0 transition-transform duration-500"></div>
+                        <img src="https://images.unsplash.com/photo-1547153760-18fc86324498?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" class="relative z-10 rounded-[2rem] shadow-2xl object-cover aspect-[4/3] w-full" alt="Menino amarrando a sapatilha">
+                    </div>
+                    <div class="w-full lg:w-1/2">
+                        <span class="text-ballet-primary font-bold tracking-widest uppercase text-[11px] mb-4 block border-l-2 border-ballet-primary pl-3">O Início • Liceu Cláudio Santoro</span>
+                        <h3 class="text-3xl md:text-4xl lg:text-5xl font-serif font-bold text-ballet-dark mb-6 leading-[1.1]">Onde a paixão encontrou a disciplina.</h3>
+                        <p class="text-lg text-ballet-muted leading-relaxed mb-6">
+                            Tudo começou aos 15 anos de idade. No <strong class="text-ballet-dark">Liceu de Artes e Ofício Cláudio Santoro</strong>, Stanley não encontrou apenas aulas de balé; ele encontrou o seu propósito. Desde o primeiro dia, ficou claro que a dança não seria um passatempo, mas a razão da sua vida.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Bloco 2: Levé Studio (Invertido) -->
+                <div class="flex flex-col lg:flex-row-reverse items-center gap-10 lg:gap-20">
+                    <div class="w-full lg:w-1/2 relative group">
+                        <div class="absolute inset-0 bg-ballet-accent/20 rounded-[2rem] transform rotate-3 group-hover:rotate-0 transition-transform duration-500"></div>
+                        <img src="https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" class="relative z-10 rounded-[2rem] shadow-2xl object-cover aspect-[4/3] w-full" alt="Bailarino no estúdio">
+                    </div>
+                    <div class="w-full lg:w-1/2 text-left lg:text-right">
+                        <span class="text-ballet-primary font-bold tracking-widest uppercase text-[11px] mb-4 flex lg:justify-end border-l-2 lg:border-l-0 lg:border-r-2 border-ballet-primary pl-3 lg:pl-0 lg:pr-3">A Evolução • Levé Studio de Dança</span>
+                        <h3 class="text-3xl md:text-4xl lg:text-5xl font-serif font-bold text-ballet-dark mb-6 leading-[1.1]">O talento bruto, lapidado com suor e excelência.</h3>
+                        <p class="text-lg text-ballet-muted leading-relaxed mb-6">
+                            Sua dedicação excepcional logo chamou atenção, garantindo a Stanley uma bolsa de estudos no prestigioso <strong class="text-ballet-dark">Levé Studio de Dança</strong>. Foi ali que as horas intermináveis de ensaio transformaram a vontade em técnica impecável, e o sonho começou a ganhar contornos reais.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Bloco 3: Cultura -->
+                <div class="flex flex-col lg:flex-row items-center gap-10 lg:gap-20">
+                    <div class="w-full lg:w-1/2 relative group">
+                        <!-- Cor quente para representar o Festival Folclórico -->
+                        <div class="absolute inset-0 bg-orange-100 rounded-[2rem] transform -rotate-3 group-hover:rotate-0 transition-transform duration-500"></div>
+                        <img src="https://images.unsplash.com/photo-1533107862482-0e6974b06ec4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" class="relative z-10 rounded-[2rem] shadow-2xl object-cover aspect-[4/3] w-full" alt="Cultura e força">
+                    </div>
+                    <div class="w-full lg:w-1/2">
+                        <span class="text-ballet-primary font-bold tracking-widest uppercase text-[11px] mb-4 block border-l-2 border-ballet-primary pl-3">Raízes • Cultura Amazonense</span>
+                        <h3 class="text-3xl md:text-4xl lg:text-5xl font-serif font-bold text-ballet-dark mb-6 leading-[1.1]">Um bailarino completo que carrega o Norte no peito.</h3>
+                        <p class="text-lg text-ballet-muted leading-relaxed mb-6">
+                            A arte de Stanley não se resume ao balé clássico. A cultura do Norte ferve em suas veias: ele sagrou-se <strong class="text-ballet-dark">Campeão Prata</strong> (Junina Girassol) e, no ano seguinte, <strong class="text-ballet-dark">Campeão Ouro</strong> (Sete Queda na Roça) no gigantesco Festival Folclórico do Amazonas.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Bloco 4: Balé Jovem e CTA (Invertido) -->
+                <div class="flex flex-col lg:flex-row-reverse items-center gap-10 lg:gap-20">
+                    <div class="w-full lg:w-1/2 relative group">
+                        <div class="absolute inset-0 bg-ballet-dark/20 rounded-[2rem] transform rotate-3 group-hover:rotate-0 transition-transform duration-500"></div>
+                        <img src="https://images.unsplash.com/photo-1508700929628-666bc8bd84ea?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" class="relative z-10 rounded-[2rem] shadow-2xl object-cover aspect-[4/3] w-full" alt="Salto no palco">
+                    </div>
+                    <div class="w-full lg:w-1/2 text-left lg:text-right flex flex-col lg:items-end">
+                        <span class="text-ballet-primary font-bold tracking-widest uppercase text-[11px] mb-4 flex lg:justify-end border-l-2 lg:border-l-0 lg:border-r-2 border-ballet-primary pl-3 lg:pl-0 lg:pr-3">O Presente • Balé Jovem do Amazonas</span>
+                        <h3 class="text-3xl md:text-4xl lg:text-5xl font-serif font-bold text-ballet-dark mb-6 leading-[1.1]">Os palcos de Manaus já ficaram pequenos.</h3>
+                        <p class="text-lg text-ballet-muted leading-relaxed mb-8">
+                            Hoje, como membro oficial do incrível <strong class="text-ballet-dark">Balé Jovem do Amazonas</strong>, ele já emocionou plateias inteiras nos palcos do Teatro Amazonas e Teatro ICBEU. Agora, Stanley está pronto para o maior e mais desafiador salto da sua vida: brilhar no <strong class="text-ballet-dark border-b-2 border-ballet-light">Theatro Municipal do Rio de Janeiro</strong>.
+                        </p>
+                        
+                        <!-- CTA Injetado na emoção -->
+                        <div class="w-full sm:w-auto bg-gray-50 p-6 rounded-2xl border border-gray-100 flex flex-col items-center lg:items-end text-center lg:text-right shadow-sm mt-2">
+                            <p class="text-sm font-bold text-ballet-dark mb-4">Só falta a SUA ajuda para comprar essa passagem.</p>
+                            <a href="#ajudar" class="bg-ballet-dark text-white text-[13px] font-bold uppercase tracking-widest py-4 px-8 rounded-full hover:bg-ballet-primary hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300 w-full text-center flex items-center justify-center gap-2">
+                                💝 Como Ajudar (Pix)
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção: Transparência e Metas -->
+    <section id="metas" class="py-24 bg-gray-50 relative border-t border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            
+            <div class="flex flex-col lg:flex-row gap-16 items-center">
+                
+                <!-- Esquerda: Título e Total -->
+                <div class="w-full lg:w-5/12">
+                    <span class="inline-flex items-center gap-2 text-[10px] font-bold text-ballet-primary uppercase tracking-[0.2em] mb-4">
+                        <span class="w-8 h-[1px] bg-ballet-primary"></span>
+                        Transparência
+                    </span>
+                    <h2 class="text-4xl md:text-5xl font-serif font-bold text-ballet-dark mb-6 leading-[1.15]">Onde será investido o seu apoio?</h2>
+                    <p class="text-lg text-ballet-muted leading-relaxed mb-10">
+                        O caminho de Manaus até o Theatro Municipal do Rio de Janeiro exige mais do que talento, exige estrutura. Queremos ser 100% transparentes sobre como cada centavo da sua doação ajudará a viabilizar este sonho.
+                    </p>
+                    
+                    <div class="bg-white rounded-[2rem] p-8 md:p-10 shadow-[0_15px_50px_-10px_rgba(47,112,181,0.15)] border border-ballet-light/30 relative overflow-hidden">
+                        <!-- Decorativo de fundo -->
+                        <div class="absolute -right-10 -bottom-10 w-40 h-40 bg-ballet-light/20 rounded-full blur-2xl"></div>
+                        
+                        <p class="text-[11px] font-bold text-ballet-muted uppercase tracking-[0.2em] mb-3">Meta Total da Vaquinha</p>
+                        <p class="text-5xl md:text-6xl font-serif font-bold text-ballet-dark flex items-start gap-1">
+                            <span class="text-2xl mt-1 text-ballet-primary">R$</span> 
+                            10.000<span class="text-2xl text-ballet-muted mt-2">,00</span>
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Direita: Breakdown dos Custos -->
+                <div class="w-full lg:w-7/12">
+                    <div class="space-y-4">
+                        
+                        <!-- Item 1: Curso -->
+                        <div class="bg-white rounded-2xl p-6 sm:px-8 flex flex-col sm:flex-row items-start sm:items-center justify-between shadow-sm border border-gray-100 hover:shadow-md hover:border-ballet-light/50 transition-all duration-300 group">
+                            <div class="flex items-center gap-5 mb-4 sm:mb-0">
+                                <div class="w-14 h-14 shrink-0 rounded-full bg-ballet-light/20 flex items-center justify-center text-ballet-primary group-hover:scale-110 group-hover:bg-ballet-primary group-hover:text-white transition-all duration-300">
+                                    <svg fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-7 h-7"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" /></svg>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-ballet-dark text-lg sm:text-xl">Curso de Verão</h4>
+                                    <p class="text-sm text-ballet-muted">Matrícula no Theatro Municipal RJ</p>
+                                </div>
+                            </div>
+                            <div class="sm:text-right w-full sm:w-auto pl-19 sm:pl-0">
+                                <span class="font-serif font-bold text-2xl text-ballet-dark">R$ 2.200</span>
+                            </div>
+                        </div>
+
+                        <!-- Item 2: Passagens -->
+                        <div class="bg-white rounded-2xl p-6 sm:px-8 flex flex-col sm:flex-row items-start sm:items-center justify-between shadow-sm border border-gray-100 hover:shadow-md hover:border-ballet-light/50 transition-all duration-300 group">
+                            <div class="flex items-center gap-5 mb-4 sm:mb-0">
+                                <div class="w-14 h-14 shrink-0 rounded-full bg-ballet-light/20 flex items-center justify-center text-ballet-primary group-hover:scale-110 group-hover:bg-ballet-primary group-hover:text-white transition-all duration-300">
+                                    <svg fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-7 h-7"><path stroke-linecap="round" stroke-linejoin="round" d="M6 12L3.269 3.125A59.769 59.769 0 0121.485 12 59.768 59.768 0 013.27 20.875L5.999 12Zm0 0h7.5" /></svg>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-ballet-dark text-lg sm:text-xl">Passagens Aéreas</h4>
+                                    <p class="text-sm text-ballet-muted">Ida e volta: Manaus (MAO) ➔ Rio de Janeiro</p>
+                                </div>
+                            </div>
+                            <div class="sm:text-right w-full sm:w-auto pl-19 sm:pl-0">
+                                <span class="font-serif font-bold text-2xl text-ballet-dark">R$ 3.000</span>
+                            </div>
+                        </div>
+
+                        <!-- Item 3: Hospedagem -->
+                        <div class="bg-white rounded-2xl p-6 sm:px-8 flex flex-col sm:flex-row items-start sm:items-center justify-between shadow-sm border border-gray-100 hover:shadow-md hover:border-ballet-light/50 transition-all duration-300 group">
+                            <div class="flex items-center gap-5 mb-4 sm:mb-0">
+                                <div class="w-14 h-14 shrink-0 rounded-full bg-ballet-light/20 flex items-center justify-center text-ballet-primary group-hover:scale-110 group-hover:bg-ballet-primary group-hover:text-white transition-all duration-300">
+                                    <svg fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-7 h-7"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" /></svg>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-ballet-dark text-lg sm:text-xl">Hospedagem & Estadia</h4>
+                                    <p class="text-sm text-ballet-muted">Acomodação segura e estrutura básica</p>
+                                </div>
+                            </div>
+                            <div class="sm:text-right w-full sm:w-auto pl-19 sm:pl-0">
+                                <span class="font-serif font-bold text-2xl text-ballet-dark">R$ 2.000</span>
+                            </div>
+                        </div>
+
+                        <!-- Item 4: Alimentação e Outros -->
+                        <div class="bg-white rounded-2xl p-6 sm:px-8 flex flex-col sm:flex-row items-start sm:items-center justify-between shadow-sm border border-gray-100 hover:shadow-md hover:border-ballet-light/50 transition-all duration-300 group">
+                            <div class="flex items-center gap-5 mb-4 sm:mb-0">
+                                <div class="w-14 h-14 shrink-0 rounded-full bg-ballet-light/20 flex items-center justify-center text-ballet-primary group-hover:scale-110 group-hover:bg-ballet-primary group-hover:text-white transition-all duration-300">
+                                    <svg fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-7 h-7"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 8.25h19.5M2.25 9h19.5m-16.5 5.25h6m-6 2.25h3m-3.75 3h15a2.25 2.25 0 002.25-2.25V6.75A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25v10.5A2.25 2.25 0 004.5 19.5z" /></svg>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-ballet-dark text-lg sm:text-xl">Alimentação & Transporte</h4>
+                                    <p class="text-sm text-ballet-muted">Locomoção diária, refeições e imprevistos</p>
+                                </div>
+                            </div>
+                            <div class="sm:text-right w-full sm:w-auto pl-19 sm:pl-0">
+                                <span class="font-serif font-bold text-2xl text-ballet-dark">R$ 2.800</span>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção de Depoimentos e Mural -->
+    <section id="depoimentos" class="py-24 bg-white relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            
+            <div class="text-center mb-16">
+                <span class="inline-flex items-center gap-2 text-[10px] font-bold text-ballet-primary uppercase tracking-[0.2em] mb-4">
+                    <span class="w-8 h-[1px] bg-ballet-primary"></span>
+                    Mural de Apoio
+                    <span class="w-8 h-[1px] bg-ballet-primary"></span>
+                </span>
+                <h2 class="text-4xl md:text-5xl font-serif font-bold text-ballet-dark mb-6">A força da nossa torcida</h2>
+                <p class="text-lg text-ballet-muted max-w-2xl mx-auto">
+                    Mensagens de carinho, apoio e força daqueles que acreditam no talento do Stanley. Deixe também o seu recado!
+                </p>
+            </div>
+
+            <div class="flex flex-col lg:flex-row gap-12 lg:gap-16">
+                
+                <!-- Lista de Depoimentos (Mockados) -->
+                <div class="w-full lg:w-7/12 grid gap-6 sm:grid-cols-2 lg:grid-cols-2">
+                    
+                    <!-- Depoimento 1 -->
+                    <div class="bg-gray-50 rounded-2xl p-6 md:p-8 border border-gray-100 shadow-sm relative group hover:shadow-md transition-shadow">
+                        <svg class="absolute top-6 right-6 w-8 h-8 text-ballet-light/40 group-hover:text-ballet-light transition-colors" fill="currentColor" viewBox="0 0 24 24"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" /></svg>
+                        <p class="text-ballet-muted/90 italic mb-8 relative z-10 leading-relaxed text-sm">"O Stanley é um talento raro. Acompanhar sua evolução no estúdio mostrou o quão longe a verdadeira dedicação pode nos levar. O Rio de Janeiro é só o começo."</p>
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 rounded-full bg-ballet-accent/20 flex items-center justify-center text-ballet-dark font-serif text-xl">A</div>
+                            <div>
+                                <h5 class="text-sm font-bold text-ballet-dark">Ana Costa</h5>
+                                <p class="text-[10px] uppercase tracking-wider text-ballet-primary font-bold">Professora de Ballet</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Depoimento 2 -->
+                    <div class="bg-gray-50 rounded-2xl p-6 md:p-8 border border-gray-100 shadow-sm relative group hover:shadow-md transition-shadow">
+                        <svg class="absolute top-6 right-6 w-8 h-8 text-ballet-light/40 group-hover:text-ballet-light transition-colors" fill="currentColor" viewBox="0 0 24 24"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" /></svg>
+                        <p class="text-ballet-muted/90 italic mb-8 relative z-10 leading-relaxed text-sm">"Ver a força que ele tem representando a nossa cultura nas quadrilhas juninas e depois vê-lo brilhando no balé clássico é de arrepiar. Estamos na torcida!"</p>
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 rounded-full bg-orange-100 flex items-center justify-center text-orange-600 font-serif text-xl">J</div>
+                            <div>
+                                <h5 class="text-sm font-bold text-ballet-dark">João Fernandes</h5>
+                                <p class="text-[10px] uppercase tracking-wider text-ballet-primary font-bold">Apoiador Local</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Depoimento 3 -->
+                    <div class="bg-ballet-dark rounded-2xl p-6 md:p-8 shadow-lg relative sm:col-span-2 lg:col-span-2 overflow-hidden group">
+                        <div class="absolute -right-10 -top-10 w-40 h-40 bg-white/5 rounded-full blur-2xl"></div>
+                        <p class="text-white/90 italic mb-8 relative z-10 text-lg font-serif">"Manaus já é pequena para o tamanho do seu talento. Vai com tudo, Stanley, o Theatro Municipal é o seu lugar por direito!"</p>
+                        <div class="flex items-center gap-4 relative z-10">
+                            <div class="w-12 h-12 rounded-full bg-white text-ballet-dark flex items-center justify-center font-serif text-xl font-bold">M</div>
+                            <div>
+                                <h5 class="text-sm font-bold text-white">Maria da Silva</h5>
+                                <p class="text-[10px] uppercase tracking-wider text-ballet-light font-bold">Família Levé Studio</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Formulário de Depoimento -->
+                <div class="w-full lg:w-5/12">
+                    <div class="bg-gradient-to-br from-white to-gray-50 rounded-[2rem] p-8 md:p-10 shadow-xl border border-ballet-light/30">
+                        <h3 class="text-2xl font-serif font-bold text-ballet-dark mb-2">Escreva sua mensagem</h3>
+                        <p class="text-sm text-ballet-muted mb-8">Envie seu recado de apoio para o Stanley. Suas palavras dão força para essa jornada!</p>
+                        
+                        <form class="space-y-5" onsubmit="event.preventDefault(); alert('Em breve sua mensagem será salva no nosso banco de dados!');">
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                                <div>
+                                    <label class="block text-[11px] font-bold text-ballet-dark uppercase tracking-widest mb-2">Seu Nome</label>
+                                    <input type="text" required class="w-full bg-white border border-gray-200 rounded-xl px-4 py-3.5 focus:outline-none focus:ring-2 focus:ring-ballet-primary focus:border-transparent transition-all text-sm text-ballet-dark placeholder-gray-400" placeholder="Como quer ser chamado?">
+                                </div>
+                                <div>
+                                    <label class="block text-[11px] font-bold text-ballet-dark uppercase tracking-widest mb-2">Subtítulo (Opcional)</label>
+                                    <input type="text" list="subtitle-options" class="w-full bg-white border border-gray-200 rounded-xl px-4 py-3.5 focus:outline-none focus:ring-2 focus:ring-ballet-primary focus:border-transparent transition-all text-sm text-ballet-dark placeholder-gray-400" placeholder="Ex: Apoiador local">
+                                    <datalist id="subtitle-options">
+                                        <option value="Apoiador Local"></option>
+                                        <option value="Amigo"></option>
+                                        <option value="Familiar"></option>
+                                        <option value="Professor"></option>
+                                    </datalist>
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <label class="block text-[11px] font-bold text-ballet-dark uppercase tracking-widest mb-2">Sua Mensagem</label>
+                                <textarea required rows="5" class="w-full bg-white border border-gray-200 rounded-xl px-4 py-3.5 focus:outline-none focus:ring-2 focus:ring-ballet-primary focus:border-transparent transition-all resize-none text-sm text-ballet-dark placeholder-gray-400" placeholder="Deixe aqui suas palavras de encorajamento..."></textarea>
+                            </div>
+
+                            <button type="submit" class="w-full bg-ballet-dark text-white font-bold uppercase tracking-widest py-4 rounded-xl hover:bg-ballet-primary hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300 mt-2">
+                                Enviar Mensagem
+                            </button>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção de Doação (Pix) -->
+    <section id="ajudar" class="py-24 bg-ballet-dark relative overflow-hidden text-white">
+        <!-- Efeitos de Fundo -->
+        <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-ballet-primary rounded-full blur-[120px] -translate-y-1/2 translate-x-1/3 opacity-50 pointer-events-none"></div>
+        <div class="absolute bottom-0 left-0 w-[400px] h-[400px] bg-ballet-accent rounded-full blur-[100px] translate-y-1/2 -translate-x-1/4 opacity-40 pointer-events-none"></div>
+
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+            <span class="inline-flex items-center justify-center gap-2 text-[10px] font-bold text-ballet-light uppercase tracking-[0.2em] mb-4">
+                <span class="w-8 h-[1px] bg-ballet-light"></span>
+                Faça Parte
+                <span class="w-8 h-[1px] bg-ballet-light"></span>
+            </span>
+            <h2 class="text-4xl md:text-5xl lg:text-6xl font-serif font-bold mb-6">Ajude a escrever este final feliz</h2>
+            <p class="text-lg md:text-xl text-blue-100/90 max-w-2xl mx-auto mb-16 font-medium leading-relaxed">
+                Sua doação é o passaporte para o Theatro Municipal do Rio de Janeiro. Qualquer valor faz uma diferença gigantesca na nossa jornada.
+            </p>
+
+            <div class="bg-white rounded-[2rem] p-8 md:p-12 shadow-2xl text-ballet-dark max-w-4xl mx-auto flex flex-col md:flex-row items-center gap-10 md:gap-16 relative">
+                
+                <!-- Área do QR Code -->
+                <div class="w-full md:w-1/2 flex flex-col items-center">
+                    <div class="bg-gray-50 p-5 rounded-[2rem] border-2 border-dashed border-gray-200 mb-4 relative group">
+                        <!-- O QR Code oficial de PIX usa um padrão (BR Code) que só o app do banco gera perfeitamente. Colocamos um genérico opaco para o visual. -->
+                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=kramerstanleysk@gmail.com" alt="QR Code Pix" class="w-48 h-48 rounded-xl mix-blend-multiply opacity-20 grayscale transition-opacity">
+                        <div class="absolute inset-0 flex flex-col items-center justify-center p-4 text-center">
+                            <span class="text-[10px] uppercase font-bold tracking-widest text-ballet-dark bg-white px-4 py-2 rounded-full shadow-md mb-2">QR Code do App</span>
+                        </div>
+                    </div>
+                    <p class="text-xs font-bold text-ballet-muted text-center max-w-[250px] leading-relaxed">
+                        Salve a imagem do QR Code no aplicativo do Mercado Pago e substitua aqui no site.
+                    </p>
+                </div>
+
+                <div class="hidden md:block w-[1px] h-56 bg-gray-100"></div>
+
+                <!-- Área dos Dados do Pix -->
+                <div class="w-full md:w-1/2 flex flex-col items-center md:items-start text-center md:text-left">
+                    <h3 class="text-2xl font-serif font-bold text-ballet-dark mb-6">Dados para Transferência</h3>
+                    
+                    <div class="w-full space-y-5 mb-4">
+                        <div>
+                            <p class="text-[10px] uppercase font-bold text-ballet-muted tracking-widest mb-2">Chave Pix (E-mail)</p>
+                            <div class="flex items-center gap-2 bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 w-full">
+                                <span class="text-sm font-bold text-ballet-primary truncate flex-1 select-all" id="pix-key">kramerstanleysk@gmail.com</span>
+                                <button onclick="copyPix()" class="shrink-0 text-ballet-dark hover:text-white bg-white hover:bg-ballet-primary transition-all p-2.5 rounded-lg shadow-sm border border-gray-200" title="Copiar Chave">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>
+                                </button>
+                            </div>
+                            <p id="copy-msg" class="text-xs text-green-600 font-bold mt-2 h-4 opacity-0 transition-opacity">Chave copiada com sucesso!</p>
+                        </div>
+                        
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-left p-4 bg-gray-50 rounded-xl border border-gray-100">
+                            <div>
+                                <p class="text-[9px] uppercase font-bold text-ballet-muted tracking-widest mb-1">Beneficiário</p>
+                                <p class="text-[11px] sm:text-xs font-bold text-ballet-dark leading-snug">Stanley Salomao Kramer Macedo</p>
+                            </div>
+                            <div>
+                                <p class="text-[9px] uppercase font-bold text-ballet-muted tracking-widest mb-1">Instituição</p>
+                                <p class="text-[11px] sm:text-xs font-bold text-ballet-dark leading-snug">Mercado Pago</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-[#24588f] py-8 text-center border-t border-white/10">
+        <p class="text-[10px] text-white/50 uppercase tracking-widest font-bold">
+            De Manaus ao Palco do TMRJ &copy; 2026. Todos os direitos reservados.
+        </p>
+    </footer>
+
+    <!-- Script para o contador de dias -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const today = new Date();
+            let targetYear = today.getFullYear();
+            if (today.getMonth() === 11 && today.getDate() > 31) {
+                targetYear++;
+            }
+            const targetDate = new Date(`${targetYear}-12-31T23:59:59`).getTime();
+            
+            const diff = targetDate - today.getTime();
+            const daysLeft = Math.max(0, Math.ceil(diff / (1000 * 60 * 60 * 24)));
+            
+            document.getElementById('countdown').innerText = daysLeft + (daysLeft === 1 ? " dia" : " dias");
+        });
+
+        function copyPix() {
+            navigator.clipboard.writeText('kramerstanleysk@gmail.com').then(() => {
+                const msg = document.getElementById('copy-msg');
+                msg.classList.remove('opacity-0');
+                setTimeout(() => msg.classList.add('opacity-0'), 2000);
+            }).catch(err => {
+                console.error('Falha ao copiar:', err);
+            });
+        }
+    </script>
+</body>
+</html>

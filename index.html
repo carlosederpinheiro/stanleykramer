@@ -227,7 +227,7 @@
                 <div class="flex flex-col lg:flex-row-reverse items-center gap-10 lg:gap-20">
                     <div class="w-full lg:w-1/2 relative group">
                         <div class="absolute inset-0 bg-ballet-accent/20 rounded-[2rem] transform rotate-3 group-hover:rotate-0 transition-transform duration-500"></div>
-                        <img src="stanley1.png" class="relative z-10 rounded-[2rem] shadow-2xl object-contain bg-gray-50 border border-gray-100 aspect-[4/3] w-full p-2" alt="Bailarino no estúdio">
+                        <img src="stanley1.png" class="relative z-10 rounded-[2rem] shadow-2xl w-full h-auto object-cover" alt="Bailarino no estúdio">
                     </div>
                     <div class="w-full lg:w-1/2 text-left lg:text-right">
                         <span class="text-ballet-primary font-bold tracking-widest uppercase text-[11px] mb-4 flex lg:justify-end border-l-2 lg:border-l-0 lg:border-r-2 border-ballet-primary pl-3 lg:pl-0 lg:pr-3">A Evolução • Levé Studio de Dança</span>
@@ -243,7 +243,7 @@
                     <div class="w-full lg:w-1/2 relative group">
                         <!-- Cor quente para representar o Festival Folclórico -->
                         <div class="absolute inset-0 bg-orange-100 rounded-[2rem] transform -rotate-3 group-hover:rotate-0 transition-transform duration-500"></div>
-                        <img src="Stanley_quadrilha.jpeg" class="relative z-10 rounded-[2rem] shadow-2xl object-cover aspect-[4/3] w-full" alt="Cultura e força">
+                        <img src="Stanley_quadrilha.jpeg" class="relative z-10 rounded-[2rem] shadow-2xl w-full h-auto object-cover" alt="Cultura e força">
                     </div>
                     <div class="w-full lg:w-1/2">
                         <span class="text-ballet-primary font-bold tracking-widest uppercase text-[11px] mb-4 block border-l-2 border-ballet-primary pl-3">Raízes • Cultura Amazonense</span>
@@ -471,15 +471,11 @@
                 
                 <!-- Área do QR Code -->
                 <div class="w-full md:w-1/2 flex flex-col items-center">
-                    <div class="bg-gray-50 p-5 rounded-[2rem] border-2 border-dashed border-gray-200 mb-4 relative group">
-                        <!-- O QR Code oficial de PIX usa um padrão (BR Code) que só o app do banco gera perfeitamente. Colocamos um genérico opaco para o visual. -->
-                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=kramerstanleysk@gmail.com" alt="QR Code Pix" class="w-48 h-48 rounded-xl mix-blend-multiply opacity-20 grayscale transition-opacity">
-                        <div class="absolute inset-0 flex flex-col items-center justify-center p-4 text-center">
-                            <span class="text-[10px] uppercase font-bold tracking-widest text-ballet-dark bg-white px-4 py-2 rounded-full shadow-md mb-2">QR Code do App</span>
-                        </div>
+                    <div class="bg-gray-50 p-5 rounded-[2rem] border-2 border-gray-100 shadow-sm mb-4">
+                        <img src="QR_CODE.png" alt="QR Code Pix" class="w-48 h-48 rounded-xl object-contain">
                     </div>
                     <p class="text-xs font-bold text-ballet-muted text-center max-w-[250px] leading-relaxed">
-                        Salve a imagem do QR Code no aplicativo do Mercado Pago e substitua aqui no site.
+                        Abra o aplicativo do seu banco e escaneie o QR Code acima para apoiar com qualquer valor.
                     </p>
                 </div>
 
